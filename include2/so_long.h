@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/06 21:43:41 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/05 17:24:19 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int main(int argc, char **argv)
-{
-	int i;
+#include <unistd.h> // open, close, read, write
+#include <stdlib.h>	// malloc, free 
+#include <stdio.h>	// perror
 
-	if (argc != 2)
-		exit ();
-}
+	/* Funciones */
+
+#endif

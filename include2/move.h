@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   move.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/06 21:43:41 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/06 16:51:05 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/06 19:43:28 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+# ifndef MOVE_H
+# define MOVE_H
 
-int main(int argc, char **argv)
-{
-	int i;
+# define TITTLE "so_long"
+# define ESC 53
+# define KEY_UP 24
+# define KEY_DOW 42
+# define KYE_LEFT 150
+# define KEY_RIGHT 151
+# define A 1
+# define S 2
+# define D 3
+# define W 5
 
-	if (argc != 2)
-		exit ();
-}
+# endif
