@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/05 17:19:46 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/06 19:28:40 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@ int main(int argc, char **argv)
 {
 	int i;
 
-	if (argc == 2)
-	{
-		// aca hara cosas :D;
-	}
-	return (0);
+	if (argc != 2)
+		exit ();
 }
