@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.h                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 16:51:05 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/06 19:43:28 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/07 17:35:10 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef MOVE_H
-# define MOVE_H
+#include "../../so_long.h"
 
-# define TITTLE "so_long"
-# define ESC 53
-# define KEY_UP 24
-# define KEY_DOW 42
-# define KYE_LEFT 150
-# define KEY_RIGHT 151
-# define A 1
-# define S 2
-# define D 3
-# define W 5
+void	read_map(int fd, t_game *d)
+{
+	int	*line;
+	int	*tmp_line;
+	int	*all_line;
 
-# endif
+	line = ft_strdup("");
+	all_line = ft_strdup("");
+	while (line)
+	{
+		free(line);
+		line = get_next_line(fd);
+		if (line && line[0] == '\0')
+		{
+			free(line);
+		}
+		tmp_line = all_line;
+	}
+}
