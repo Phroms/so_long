@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/08 20:26:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/08 21:58:57 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 /* Funciones */
 
+	/* map_backtraking */
+
+void	cont_row_col(t_game *game);
+
 	/* map.c */
 
 void	read_map(int fd, t_game *game);
@@ -28,6 +32,7 @@ void	map_start(char **argv, t_game *game);
 
 	/* errors.c */
 
+int		end_game(t_game *game);
 void	free_map(char **map);
 void	free_enum(char **map, char *errir_msg);
 void	exit_nocompilation(void);

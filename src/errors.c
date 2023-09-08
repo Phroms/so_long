@@ -6,15 +6,20 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/08 20:35:52 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/08 21:58:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 int	end_game(t_map *game)
 {
 	map_exit(game->map, FINISH, "Game Over\n");
+	// aca iria la minilibx para la imagen;
+	// aca tambien pero para terminar la ventana;
+	// aca tambien pero para terminar el juego;
+	free(game);
+	exit (1);
 }
 
 void	free_map(char **map)
