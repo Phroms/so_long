@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/07 21:49:40 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/08 20:35:56 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ void	analyze_map(t_game *game)
 {
 	// verifica si el mapa es rectangular;
 	if (map_is_rect(game) == 0)
-		map_exit(game->map, NOT_RECT, "EL mapa no es rectangulo"); // hacer una funcion para "map exit" en donde le enviaremos la direccion de "map", un enuncidao y un str;
-	
+		map_exit(game->map, NOT_RECT, "EL mapa no es rectangulo"); // hacer una funcion para "map exit" en donde le enviaremos la direccion de "map", un enuncidao y un errormsj;
 	// verifica si hay problemas con la cantidad de paredes del mapa;
 	else if(map_view_walls(game) > 0)
 		map_exit(game->map, NOT_WALLS, "El tamano del mapa es incorrecto"); // lo mismo pero para "map view walls";
