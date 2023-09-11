@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_parse_chars.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 19:28:26 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/11 19:46:07 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../..//include/so_long.h"
 
-int main(int argc, char **argv)
+int	map_parse_chars(t_game *game, char p) // p es la palabre que se va a encontrar
 {
-	t_game	*d; // sera "d" de direccion;
+	int i;
+	int flags;
 
-	if (argc != 2)
-		exit (1);	
+	i = 0;
+	flags = 0;
+	while (game->map[i])
+	{
+		if (ft_strchr(game->map[i], p))
+			flags++;
+		i++;
+	}
+	if (p == 'E' || p == 'P')
+	{
+		if (flags == 0 || flags > 1)
+			return (0);
+	}
+	else if (p == 'C')
+	{
+		if (flags == 0)
+			return (0);
+	}
+	return (1);
 }
+
+

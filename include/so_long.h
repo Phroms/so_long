@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/08 21:58:57 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:46:05 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@
 	/* map_backtraking */
 
 void	cont_row_col(t_game *game);
+void	initialize_bactraking(t_game *game);
+void	localized_bactraking(t_game *game, int i, int j);
+void	map_backtraking(t_game *game);
 
+	/* map_parse_chars */
+
+int 	map_parse_chars(t_game *game, char p);
 	/* map.c */
 
 void	read_map(int fd, t_game *game);
@@ -37,4 +43,5 @@ void	free_map(char **map);
 void	free_enum(char **map, char *errir_msg);
 void	exit_nocompilation(void);
 void	map_exit(char **map, int enun_msg, char *error_msg);
+
 #endif
