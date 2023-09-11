@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 19:46:05 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:57:45 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ void	map_backtraking(t_game *game);
 	/* map_parse_chars */
 
 int 	map_parse_chars(t_game *game, char p);
+int		map_parse_incorrect_chars(t_game *game);
+int		map_parse_char(t_game *game);
+
+	/* map parse rect */
+
+int 	map_parse_rect(t_game *game);
+int		map_parse_walls_rows(t_game *game);
+int		map_parse_walls_colum(t_game *game);
+int		map_parse_walls(t_game *game);
+
 	/* map.c */
 
 void	read_map(int fd, t_game *game);

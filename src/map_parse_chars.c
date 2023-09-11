@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 19:46:07 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:05:04 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,41 @@ int	map_parse_chars(t_game *game, char p) // p es la palabre que se va a encontr
 	return (1);
 }
 
+int	map_parse_incorrect_chars(t_game *game)
+{
+	int 	i;
+	int 	j;
+	char	*valid_chars;
 
+	i = 0;
+	valid_chars = "10CEP";
+	while (game->map[i])
+	{
+		j = 0;
+		while (game->map[i][j])
+		{
+			if (ft_strchr(valid_chars, game->map[i][j] == NULL))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int map_parse_char(t_game *game)
+{
+	int i;
+
+	i = 0;
+	i = map_parse_chars(game, 'P');
+	if (i == 0)
+		return (0);
+	i = map_parse_chars(game, 'E');
+	if (i == 0)
+		return (0);
+	i = map_parse_chars(game, 'C');
+	if (i == 0)
+		return (0);
+	return (1);
+}

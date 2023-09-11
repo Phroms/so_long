@@ -6,15 +6,33 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 19:46:11 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:57:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
+typedef struct s_image
+{
+	void	*img_ptr;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}t_image
+
+typedef struct s_map
+{
+	char	**map;
+	char	**map_len;
+}
 typedef struct s_game
 {
+	void	*mlx;
+	void	*win;
+	t_image	*img;
+	t_map	*juego;
 	int 	colum; // sera la cantidad de columnas que habra en el mapa; (necesitaras un strlen)
 	int 	rows;  // sera la cantidad de filas que habra en el mapa; (necesitaras un strlen)
 	int		coins;
@@ -26,16 +44,5 @@ typedef struct s_game
 	int		win;
 	int		exit;
 }t_game;
-
-typedef struct s_map
-{
-	char	**map;
-	char	**map_len;
-}t_map;
-
-/*typedef struct s_jugador
-{
-
-}t_jugador;*/
 
 #endif
