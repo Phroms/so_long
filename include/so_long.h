@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 21:57:45 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:19:45 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 
 
 /* Funciones */
+
+	/* draw map */
+
+void	draw_walls_and_path(t_game *game);
+void	draw_entities(t_game *game);
+void	draw_finish(t_game *game);
+void	draw_map(t_game *game);
 
 	/* map_backtraking */
 

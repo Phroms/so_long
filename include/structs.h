@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/12 16:59:58 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:30:34 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_game
 	int 	c; // dice navid dos coins para hacer el brackting
 	int		e; // otro exit para el backtraing
 	int		moves;
+	int		al_col; // es el valor X de la altura que tendra 
+	int		ho_row; // es el valor X horizontal que tendra
 	int		m_col; // movimientos del jugador en columnas;
 	int		m_row; // moviminetos del jugrador en filas;
 	int		win;
