@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:47:25 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 18:28:57 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:05:10 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ void	player_movements(t_game *game, int row_offest, int col_offset)
 		ft_printf("Player moves %d\n", game->moves);
 		game->moves += 1;
 	}
+}
+
+void	move_player_to_coordinates(t_game *game, int new_row, int new_col)
+{
+	int row_offset = new_row - game->m_row;
+	int	col_offset = new_col - game->m_col;
+
+	player_movements(game, row_offset, col_offset);
 }
