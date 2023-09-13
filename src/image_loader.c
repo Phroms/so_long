@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   image_loader.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 18:07:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 20:39:22 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/13 21:28:09 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/13 21:34:21 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ERRORS_H
-# define ERRORS_H
+#include "../../include/so_long.h"
 
-enum
+void	image_data(t_game *game)
 {
-	NOT_BER;
-	NOT_RECT;
-	NOT_WALLS;
-	NOT_CHARS;
-	BAD_CHARS;
-	NOT_PATH;
-	FINISH;
+	//aqui iran cositassssss
 }
-
-# endif

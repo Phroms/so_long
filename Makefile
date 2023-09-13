@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 20:11:34 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/13 20:24:09 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/13 21:52:54 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,10 @@ HEADERS = include/so_long.h
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 MLX = include/mlx/libmlx.a
 
-SRC = src/draw_map.c src/errors.c src/map.c src/map_backtracking.c \
-	  	src/map_parse_chars.c src/map_parse_rect.c src/player_movement_check.c \
-			src/player_movements.c src/so_long.c
+SRC = src/game_input.c src/image_loader.c src/var_init.c src/draw_map.c \
+	  src/errors.c src/map.c src/map_backtracking.c src/map_parse_chars.c \
+	  src/map_parse_rect.c src/player_movement_check.c src/player_movements.c \
+	  src/so_long.c
 all:
 		@$(MAKE) -sC include/libft
 		@$(MAKE) -sC include/mlx

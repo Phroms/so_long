@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   var_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 18:07:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 20:39:22 by agrimald         ###   ########.fr       */
+/*   Created: 2023/09/13 20:55:19 by agrimald          #+#    #+#             */
+/*   Updated: 2023/09/13 21:27:54 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ERRORS_H
-# define ERRORS_H
+#include "../../include/solong.h"
 
-enum
+void	var_init(t_game *game)
 {
-	NOT_BER;
-	NOT_RECT;
-	NOT_WALLS;
-	NOT_CHARS;
-	BAD_CHARS;
-	NOT_PATH;
-	FINISH;
+	game->h = 0;
+	game->w = 0;
+	game->e = 0;
+	game->c = 0;
+	game->coins = 0;
+	game->moves = 1;
+	game->al_col = 0;
+	game->ho_row = 0;
+	game->m_col = 0;
+	game->m_row = 0;
+	game->colum = 0;
+	game->rows = 0;
 }
-
-# endif

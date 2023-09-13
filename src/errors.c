@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/11 19:46:09 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/13 21:45:36 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	end_game(t_map *game)
 {
 	map_exit(game->map, FINISH, "Game Over\n");
-	// aca iria la minilibx para la imagen;
-	// aca tambien pero para terminar la ventana;
-	// aca tambien pero para terminar el juego;
+	mlx_destroyimage(game->mlx, game->img);
+	mlx_destroy_window(game->mlx, game->win);
+	mlx_destroy(game->mlx);
 	free(game);
 	exit (1);
 }
