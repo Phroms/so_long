@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 21:52:14 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:06:24 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 
 
 /* Funciones */
+
+	/* image loader */
+
+void	image_data(t_game *game);
+void	image_init(t_game *game);
 
 	/* so long */
 

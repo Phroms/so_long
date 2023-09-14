@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 21:25:56 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:06:26 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_game
 	t_image	*img;
 	char	**map;
 	char	**map_len;
-	int		h;
-	int		w;
+	int		al; // sera la altura que definamos;
+	int		an; // sera lo ancho que definamos;
 	int		e; // exit para el backtracking
 	int		c; // segundo coin para hacer el backtracking
 	int		coins;
