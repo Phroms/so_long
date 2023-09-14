@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 21:27:21 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:57:49 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	read_map(int fd, t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:29:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 21:27:30 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:57:22 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../..//include/so_long.h"
+#include "../../include/so_long.h"
 
 void	draw_walls_and_path(t_game *game)
 {

@@ -6,18 +6,18 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:06:22 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:06:21 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	game_start(t_game *game)
 {
 	game->mlx = mlx_init();
 	cont_row_col(game);
 	game->win = mlx_new_window(game->mlx, game->ho_row * 32, game->al_col * 32, TITTLE);
-	//image_loader(game);
+	image_loader(game);
 	draw_map(game);
 	mlx_hook(game->win, 2, 0, game_read_keys, game);
 	mlx_hook(game->win, 17, 0, game_destroy, game);

@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/13 21:27:34 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:58:03 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../..//include/so_long.h"
+#include "../../include/so_long.h"
 
 int	map_parse_chars(t_game *game, char p) // p es la palabre que se va a encontrar
 {

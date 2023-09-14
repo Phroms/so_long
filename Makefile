@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 20:11:34 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/13 21:47:26 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/14 15:06:15 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,18 +25,18 @@ SRC = src/game_input.c src/image_loader.c src/var_init.c src/draw_map.c \
 all:
 		@$(MAKE) -sC include/libft
 		@$(MAKE) -sC include/mlx
-		@$(MKAE) $(NAME)
+		@$(MAKE) $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 		@printf "compiling objects"
 		@mkdir -p $(@D)
-		@gcc $(CFLAGS) -c $< -o $@ - INCLUDE/libft
+		@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft
 
 $(NAME): $(OBJECTS) $(HEADERS) Makefile $(LIBFT) $(MLX)
 		@mkdir -p $(@D)
 		@gcc $(CFLAGS) -o $(NAME) $(OBJECTS) -Iinclude/libft -Linclude/libft -lft \
-		-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -frameword Appkit
-		@printf "\nCompiled successfully!/n"
+		-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -framework Appkit
+		@printf "\nCompiled successfully!\n"
 
 fclean: clean
 		@rm -rf $(NAME)

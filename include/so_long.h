@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:06:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:07:12 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	move_player_to_coordinates(t_game *game, int new_row, int new_col);
 	/* player movement check */
 
 int 	valid_movements(t_game *game, int colum, int rows);
-void	taking_coins(_game *game, int colum, int rows);
+void	taking_coins(t_game *game, int colum, int rows);
 int		handle_exit_key(int key_pressed, t_game *game);
 void	game_finish(t_game *game, int rows, int colum);
 
