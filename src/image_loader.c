@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 21:28:09 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:57:39 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:33:05 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	image_init(t_game *game)
 	game->img[4].img_ptr = mlx_xpm_file_to_image(game->mlx,
 			"assets/jugador.xpm", &game->an, &game->al);
 	game->img[5].img_ptr = mlx_xpm_file_to_image(game->mlx,
-			"assets/jugador_izquierda.xmp", &game->an, &game->al);
+			"assets/jugador_izquierda.xpm", &game->an, &game->al);
 	game->img[6].img_ptr = mlx_xpm_file_to_image(game->mlx,
-			"assets/puera_abierta.xpm", &game->an, &ga,e->al);
+			"assets/puerta_abierta.xpm", &game->an, &game->al);
 	image_data(game);
 }

@@ -6,17 +6,21 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 20:11:34 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/14 15:06:15 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/15 18:46:44 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CFLAGS = -Wall -Werror -Wextra -g
+
+LIBFT = include/libft/libft.a
 SRCDIR = src
 OBJDIR = obj
-HEADERS = include/so_long.h
+HEADERS = include/so_long.h include/errors.h include/move.h include/structs.h
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 MLX = include/mlx/libmlx.a
+
+OLD_MAKE = /usr/bin/make3.81 #make
 
 SRC = src/game_input.c src/image_loader.c src/var_init.c src/draw_map.c \
 	  src/errors.c src/map.c src/map_backtracking.c src/map_parse_chars.c \
@@ -30,7 +34,7 @@ all:
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 		@printf "compiling objects"
 		@mkdir -p $(@D)
-		@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft
+		@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft -Iinclude/mlx
 
 $(NAME): $(OBJECTS) $(HEADERS) Makefile $(LIBFT) $(MLX)
 		@mkdir -p $(@D)

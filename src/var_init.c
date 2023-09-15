@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:55:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:59:01 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:48:18 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/solong.h"
+#include "../../include/so_long.h"
 
 void	var_init(t_game *game)
 {

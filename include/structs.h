@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 15:08:40 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:46:46 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_image
 	int		size_l;
 	int		bpp;
 	int		endian;
-}t_image
+}t_image;
 
 typedef struct s_game
 {
@@ -42,6 +42,6 @@ typedef struct s_game
 	int		m_row; // movimientos del jugador en filas;
 	int		colum; // sera la cantidad de columnas que habra en el mapa; (necesitaras un strlen)
 	int		rows; //sera la cantidad de filas que habra en el mapa; (necesitaras un strlen)
-}t_game;
+} t_game;
 
 #endif

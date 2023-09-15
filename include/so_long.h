@@ -6,17 +6,19 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 15:07:12 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:46:41 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <unistd.h> // open, close, read, write
-#include <stdlib.h>	// malloc, free 
-#include <stdio.h>	// perror
-
+# include <libft.h>
+# include <mlx.h>
+# include <fcntl.h>
+# include "errors.h"
+# include "move.h"
+# include "structs.h"
 
 /* Funciones */
 
@@ -32,7 +34,7 @@ int		main(int argc, char **argv);
 
 	/* game input */
 
-int game_read_keys(int key_pressed, t_game *game);
+int game_read_keys(int key_pressed, t_game *game, int new_row, int new_col);
 
 	/* player movements	*/
 

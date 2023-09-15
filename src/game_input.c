@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 21:35:50 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:57:34 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:48:00 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	game_read_keys(int key_pressed, t_game *game)
+int	game_read_keys(int key_pressed, t_game *game, int new_row, int new_col)
 {
 	if (key_pressed == ESC)
 		end_game(game);

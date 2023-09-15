@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:29:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:57:22 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:48:42 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	draw_entities(t_game *game)
 			{
 				mlx_put_image_to_window(game->mlx, game->win, game->img[1].img_ptr, \
 						j * 32, i * 32);
-				game->coin++;
+				game->coins++;
 			}
 			if (game->map[i][j] == 'E')
 				mlx_put_image_to_window(game->mlx, game->win, game->img[3].img_ptr, \

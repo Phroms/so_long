@@ -6,16 +6,16 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/14 14:57:28 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:08:46 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	end_game(t_map *game)
+int	end_game(t_game *game)
 {
 	map_exit(game->map, FINISH, "Game Over\n");
-	mlx_destroyimage(game->mlx, game->img);
+	mlx_destroy_image(game->mlx, game->img);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy(game->mlx);
 	free(game);
@@ -35,7 +35,7 @@ void	free_map(char **map)
 
 void	free_enun(char **map, char *error_msg)
 {
-	free_map(mapa); // crear una funcion que libere el mapa ;
+	free_map(map); // crear una funcion que libere el mapa ;
 	ft_printf(error_msg); // aqui es el ft_printf para imprimir el error msg;
 	exit (EXIT_FAILURE);
 }
