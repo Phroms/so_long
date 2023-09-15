@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 17:33:56 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:17:38 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	game_start(t_game *game)
 	game->mlx = mlx_init();
 	cont_row_col(game);
 	game->win = mlx_new_window(game->mlx, game->ho_row * 32, game->al_col * 32, TITTLE);
-	image_loader(game);
+	image_init(game);
 	draw_map(game);
 	mlx_hook(game->win, 2, 0, game_read_keys, game);
-	mlx_hook(game->win, 17, 0, game_destroy, game);
+	mlx_hook(game->win, 17, 0, end_game, game);
 }
 
 int main(int argc, char **argv)
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	{
 		game = (t_game *)malloc(sizeof(t_game));
 		var_init(game);
-		map_start(game);
+		map_start(argv, game);
 		game_start(game);
 		mlx_loop(game->mlx);
 		mlx_destroy(game->mlx);

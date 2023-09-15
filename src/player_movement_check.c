@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:00:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 17:33:43 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:55:28 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	game_finish(t_game *game, int rows, int colum)
 	{	
 		mlx_hook(game->win, 2, 0, handle_exit_key, game); // el 2 y el 0 es para mantener presionado y que siga avanzando normal y que no estes dandole a cada momento la d o a;
 		draw_finish(game);
-		mlx_string_put(game->mlx, game->win(game->ho_row * 32) / 2 - 20, \
+		mlx_string_put(game->mlx, game->win, (game->ho_row * 32) / 2 - 20, \
 				(game->al_col * 32) / 2, 0x00FFFFFF, "YOU WIN!!!");
 	}
 }	

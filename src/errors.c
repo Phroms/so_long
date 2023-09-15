@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 18:08:46 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:10:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	free_enun(char **map, char *error_msg)
 	exit (EXIT_FAILURE);
 }
 
-void	exit_nocompilation(void)
+void	exit_no_compilation(void)
 {
 	ft_printf("Error el mapa no compila o esta vacio");
 	exit(EXIT_FAILURE);

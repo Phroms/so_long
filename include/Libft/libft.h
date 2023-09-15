@@ -6,18 +6,22 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:00:02 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/05 17:12:22 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:28:53 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+# endif
+
 # include <unistd.h>
-# include <stdio.h>
 # include <ctype.h>
 # include <stdlib.h>
-# include <string.h>
+# include <stdarg.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -25,7 +29,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-/* FUNCTIONS*/
+	/* FUNCTIONS*/
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -46,11 +51,12 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
-/* ADICIONALES */
+	/* ADICIONALES */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -64,7 +70,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-/* BONUSSSSSSS */
+	/* BONUSSSSSSS */
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
@@ -75,5 +81,41 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
+
+	/* Get next line */
+
+/* PROTOTIPO DEL GET_NEXT_LINE */
+
+char	*get_next_line(int fd);
+
+/* FUNCIONES ADICIONALES */
+
+size_t	ft_strlen_gnl(char *s);
+size_t	ft_strlcpy_gnl(char *dest, char *src, size_t destsize);
+char	*ft_strchr_gnl(char *s, int c);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+
+/* FUNCIONES QUE UTILIZARE */
+
+char	*read_storage(int fd, char *storage);
+char	*extract_storage(char *storage);
+char	*clean_storage(char *storage);
+char	*free_storage(char *storage);
+
+	/* My printf */
+
+/* PROTOTIPO PRINTF */
+
+int		ft_printf(const char *str, ...);
+
+/* FUNCIONES CREADAS */
+
+int		print_char(char c, int *count);
+void	print_string(char *str, int *count);
+void	print_number(int number, int *count);
+void	print_pointer(unsigned long pointer, int *count);
+void	print_hexa(int n, int *count, char c);
+void	print_unsigned(unsigned int u, int *count);
 
 #endif

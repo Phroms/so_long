@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 18:46:41 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:17:40 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 
 /* Funciones */
 
+	/* var init */
+
+void	var_init(t_game *game);
+
 	/* image loader */
 
 void	image_data(t_game *game);
@@ -34,7 +38,7 @@ int		main(int argc, char **argv);
 
 	/* game input */
 
-int game_read_keys(int key_pressed, t_game *game, int new_row, int new_col);
+int 	game_read_keys(int key_pressed, t_game *game, int new_row, int new_col);
 
 	/* player movements	*/
 
@@ -86,7 +90,7 @@ void	map_start(char **argv, t_game *game);
 int		end_game(t_game *game);
 void	free_map(char **map);
 void	free_enum(char **map, char *errir_msg);
-void	exit_nocompilation(void);
+void	exit_no_compilation(void);
 void	map_exit(char **map, int enun_msg, char *error_msg);
 
 #endif

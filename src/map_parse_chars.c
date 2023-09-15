@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 17:33:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:54:28 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	map_parse_incorrect_chars(t_game *game)
 		j = 0;
 		while (game->map[i][j])
 		{
-			if (ft_strchr(valid_chars, game->map[i][j] == NULL))
+			if (ft_strchr(valid_chars, game->map[i][j]) == NULL)
 				return (0);
 			j++;
 		}

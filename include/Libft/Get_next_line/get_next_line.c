@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:56:43 by agrimald          #+#    #+#             */
-/*   Updated: 2023/07/26 15:21:15 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:00:34 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../libft.h"
 
 char	*read_storage(int fd, char *storage)
 {

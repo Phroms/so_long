@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 17:21:10 by agrimald          #+#    #+#             */
-/*   Updated: 2023/07/19 22:17:03 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:00:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen_gnl(char *s)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	unsigned int	i;
 
@@ -36,7 +36,7 @@ char	*ft_strchr(char *s, int c)
 	return (&s[i]);
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len)
 {
 	char	*substring;
 	size_t	i;
@@ -65,7 +65,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	return (substring);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*new_str;
 	size_t	i;
@@ -93,7 +93,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (new_str);
 }
 
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy_gnl(char *dest, char *src, size_t destsize)
 {
 	unsigned int	tmp;
 	unsigned int	aux;
