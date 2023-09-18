@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:49:42 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:19:58 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:33:56 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	long_dst;
-	size_t	long_src;
+	size_t	len_dst;
+	size_t	len_src;
 	size_t	i;
 
-	long_dst = ft_strlen(dst);
-	long_src = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
 	if (dstsize == 0)
-		return (long_src);
+		return (ft_strlen(src));
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (dstsize <= len_dst)
+		return (len_src + dstsize);
 	i = 0;
-	while (src[i] && long_dst + i < dstsize - 1)
+	while (src[i] && len_dst + i < dstsize - 1)
 	{
-		dst[long_dst + i] = ((char *)src)[i];
+		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[long_dst + i] = '\0';
-	if (dstsize < long_dst)
-		return (long_src + dstsize);
-	return (long_dst + long_src);
+	dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }
 
 /*int main(void)

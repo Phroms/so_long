@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:16:06 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:18:07 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:31:18 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*pointer1;
-	unsigned char	*pointer2;
+	unsigned char	*ptrs1;
+	unsigned char	*ptrs2;
 	size_t			i;
 
-	pointer1 = (unsigned char *)s1;
-	pointer2 = (unsigned char *)s2;
+	ptrs1 = (unsigned char *)s1;
+	ptrs2 = (unsigned char *)s2;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && ((pointer1[i]) == ((pointer2)[i])))
+	while (i < n)
 	{
+		if (*ptrs1 != *ptrs2)
+			return (*ptrs1 - *ptrs2);
+		ptrs1++;
+		ptrs2++;
 		i++;
 	}
-	return ((pointer1[i] - (pointer2[i])));
+	return (0);
 }
 /*int main()
 {

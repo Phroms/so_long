@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 18:32:45 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:16:06 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:48:53 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	t_list	*node;
+
+	node = lst;
+	while (node)
 	{
-		f(lst -> content);
-		lst = lst -> next;
+		f(node->content);
+		node = node->next;
 	}
 }

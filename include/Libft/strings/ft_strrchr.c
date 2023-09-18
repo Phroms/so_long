@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:14:42 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:21:32 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:41:29 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	unsigned int	i;
+	char			*ptrs;
 
+	ptrs = NULL;
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i != 0)
+	while (s[i])
 	{
 		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+			ptrs = (char *)&s[i];
+		i++;
 	}
-	if (s[i] == (char)c)
+	if ((char)c == s[i])
 		return ((char *)&s[i]);
-	return (NULL);
+	return (ptrs);	
 }
 /*int main()
 {

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 21:01:11 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:21:02 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:38:22 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	size_t			slen;
+	char			*ptrs;
 	unsigned int	i;
-	char			*nuevo_str;
 
-	nuevo_str = ft_strdup(s);
-	i = 0;
-	if (!nuevo_str || !s || !f)
+	if (!s)
 		return (NULL);
-	while (s[i])
+	slen = ft_strlen(s);
+	ptrs = malloc(slen + 1 * sizeof(char));
+	if (!ptrs)
+		return (NULL);
+	i = 0;
+	while (s[i] > 0)
 	{
-		nuevo_str[i] = f(i, s[i]);
+		ptrs[i] = f(i, s[i]);
 		i++;
 	}
-	nuevo_str[i] = '\0';
-	return (nuevo_str);
+	ptrs[i] = '\0';
+	return (ptrs);
 }

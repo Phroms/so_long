@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 21:54:28 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:51:17 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ int map_parse_char(t_game *game)
 	int i;
 
 	i = 0;
+	i = map_parse_chars(game, 'C');
+	if (i == 0)
+		return (0);
 	i = map_parse_chars(game, 'P');
 	if (i == 0)
 		return (0);
 	i = map_parse_chars(game, 'E');
-	if (i == 0)
-		return (0);
-	i = map_parse_chars(game, 'C');
 	if (i == 0)
 		return (0);
 	return (1);

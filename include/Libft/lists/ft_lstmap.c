@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 20:18:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:16:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:49:08 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_nodo;
-	t_list	*contenido;
-	t_list	*resultado;
+	t_list	*head;
+	t_list	*new;
+	t_list	*aux;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	resultado = NULL;
+	head = NULL;
 	while (lst)
 	{
-		contenido = f(lst -> content);
-		new_nodo = ft_lstnew(contenido);
-		if (!new_nodo)
+		aux = f(lst->content);
+		new = ft_lstnew(aux);
+		if (!new)
 		{
-			ft_lstclear(&resultado, del);
-			free(contenido);
+			ft_lstclear(&head, del);
+			free(aux);
 			return (NULL);
 		}
-		ft_lstadd_back(&resultado, new_nodo);
-		lst = lst -> next;
+		ft_lstadd_back(&head, new);
+		lst = lst->next;
 	}
-	return (resultado);
+	return (head);
 }

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:45:24 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 22:18:05 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:07:48 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	return (sign * num);
+	return (num * sign);
 }	
 /*int main()
 {

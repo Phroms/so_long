@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 13:08:48 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:19:50 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:31:03 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*nueva_str;
-	size_t	longitud_s1;
-	size_t	longitud_s2;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*res;
+	char	*ptrs1;
 
-	if (!(s1 && s2))
+	if (!(ft_strlen(s1)) && !(ft_strlen(s2)))
 		return (ft_strdup(""));
-	longitud_s1 = ft_strlen(s1);
-	longitud_s2 = ft_strlen(s2);
-	nueva_str = malloc(longitud_s2 + longitud_s1 + 1);
-	if (!nueva_str)
+	ptrs1 = (char *)s1;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	res = (char *) malloc(sizeof(char) * ((len_s1 + len_s2) + 1));
+	if (res == NULL)
 		return (NULL);
-	ft_strlcpy(nueva_str, s1, longitud_s1 + 1);
-	ft_strlcpy(nueva_str + longitud_s1, s2, longitud_s2 + longitud_s1 + 1);
-	return (nueva_str);
+	ft_memmove(res, ptrs1, len_s1 + 1);
+	ft_strlcat(res, s2, (len_s1 + len_s2) + 1);
+	return (res);
 }
 /*int main()
 {

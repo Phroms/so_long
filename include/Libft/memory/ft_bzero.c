@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:47:07 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:16:57 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:15:41 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_bzero(void	*s, size_t n)
+/*void	ft_bzero(void	*s, size_t n)
 {
 	unsigned char	*j;
 	size_t			i;
@@ -24,6 +24,11 @@ void	ft_bzero(void	*s, size_t n)
 		j[i] = 0;
 		i++;
 	}
+}*/
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
 }
 /*
 int main()

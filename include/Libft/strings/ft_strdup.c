@@ -6,28 +6,33 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:28:47 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:19:33 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:27:15 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s)
 {
-	char	*nuevo;
+	size_t	len;
 	int		i;
+	char	*dup;
 
-	i = 0;
-	nuevo = malloc(ft_strlen(s1) + 1);
-	if (nuevo == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	len = ft_strlen(s);
+	dup = (char *) malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
 	{
-		nuevo[i] = s1[i];
+		errno = ENOMEM;
+		return (NULL);
+	}
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
 		i++;
 	}
-	nuevo[i] = '\0';
-	return (nuevo);
+	dup[i] = '\0';
+	return (dup);
 }
 /*int	main(int ac, char **av)
 {

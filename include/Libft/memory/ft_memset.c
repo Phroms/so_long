@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:27:05 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:18:37 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:01:51 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*i;
-	size_t	j;
+	unsigned char	*ptrs;
+	size_t			i;
 
-	i = (char *)b;
-	j = 0;
-	while (j < len)
+	ptrs = (unsigned char *)b;
+	i = 0;
+	while (i < len)
 	{
-		i[j] = (char)c;
-		j++;
+		ptrs[i++] = (unsigned char)c;
 	}
-	return (b);
+	return (ptrs);
 }
 /*int main()
 {

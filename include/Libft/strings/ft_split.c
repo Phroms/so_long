@@ -6,72 +6,70 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 13:04:45 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:19:15 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:19:36 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int	contador_palabra(const char *str, char c)
+static char	**ft_freeall(char **tab, size_t i)
 {
-	int	contador;
-	int	palabra;
-
-	contador = 0;
-	palabra = 0;
-	while (*str)
-	{
-		if (*str == c)
-			palabra = 0;
-		else if (!palabra && *str != c)
-		{
-			palabra = 1;
-			contador++;
-		}
-		str++;
-	}
-	return (contador);
+	while (i-- > 0)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
 }
 
-static char	**free_tabla(char **tabla)
+static size_t	ft_splitlen(const char *s, char c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (tabla[i])
+	while (*s)
 	{
-		free(tabla[i]);
-		i++;
+		while (*s == c)
+			s++;
+		if (*s)
+			i++;
+		while (*s && *s != c)
+			s++;
 	}
-	free(tabla);
-	return (NULL);
+	return (i);
+}
+
+static char	**ft_split_aux(char **arr, char const *s, char c)
+{
+	if (!s)
+		return (NULL);
+	arr = ft_calloc((ft_splitlen(s, c) + 1), sizeof(char *));
+	if (!arr)
+		return (NULL);
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		str_numero;
-	char	*inicio;
-	char	**str_tabla;
+	char	**arr;
+	char	*start;
+	size_t	i;
 
-	str_tabla = ft_calloc(contador_palabra(s, c) + 1, sizeof(char *));
-	if (!str_tabla)
-		return (NULL);
-	str_numero = 0;
+	arr = NULL;
+	arr = ft_split_aux(arr, s, c);
+	i = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
 		{
-			inicio = (char *)s;
+			start = (char *)s;
 			while (*s && *s != c)
 				s++;
-			str_tabla[str_numero] = ft_substr(inicio, 0, s - inicio);
-			if (!str_tabla[str_numero])
-				return (free_tabla(str_tabla));
-			str_numero++;
+			arr[i++] = ft_substr(start, 0, s - start);
+			if (!arr[i - 1])
+				return (ft_freeall(arr, i - 1));
 		}
 	}
-	str_tabla[str_numero] = NULL;
-	return (str_tabla);
+	arr[i] = NULL;
+	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:08:02 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:15:58 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:05:27 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst -> content);
-	free(lst);
+	t_list	*node;
+
+	node = lst;
+	del(node->content);
+	free(node);
 }

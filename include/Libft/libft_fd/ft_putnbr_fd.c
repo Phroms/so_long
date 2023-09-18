@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:28:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 20:15:06 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:57:15 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		ft_putchar_fd(nb + '0', fd);
+		ft_putchar_fd('0' + nb, fd);
 	}
 }

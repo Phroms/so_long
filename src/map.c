@@ -6,11 +6,12 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 22:15:19 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 22:28:12 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+#include <stdio.h>
 
 void	read_map(int fd, t_game *game)
 {
@@ -20,19 +21,24 @@ void	read_map(int fd, t_game *game)
 
 	line = ft_strdup("");
 	all_line = ft_strdup("");
+	printf("jamon\n");
 	while (line)
 	{
 		free(line);
+		printf("antes\n");
 		line = get_next_line(fd);
-		if (line && line[0] == '\0')
+		printf("despues\n");
+		if (line && line[0] == '\n')
 		{
 			free(line);
 			exit_no_compilation();
 		}
+		printf("queso\n");
 		tmp_line = all_line;
 		all_line = ft_strjoin(tmp_line, line);
 		free(tmp_line);
 	}
+	printf("hola\n");
 	if (ft_strcmp(all_line, "") == 0)
 		exit_no_compilation();
 	game->map = ft_split(all_line, '\n');
@@ -42,23 +48,15 @@ void	read_map(int fd, t_game *game)
 
 void	analyze_map(t_game *game)
 {
-	// verifica si el mapa es rectangular;
 	if (map_parse_rect(game) == 0)
-		map_exit(game->map, NOT_RECT, "EL mapa no es rectangulo"); // hacer una funcion para "map exit" en donde le enviaremos la direccion de "map", un enuncidao y un errormsj;
-	// verifica si hay problemas con la cantidad de paredes del mapa;
+		map_exit(game->map, NOT_RECT, "EL mapa no es rectangulo");
 	else if(map_parse_walls(game) > 0)
-		map_exit(game->map, NOT_WALLS, "El tamano del mapa es incorrecto"); // lo mismo pero para "map view walls";
-
-	// verifica si hay caracteres duplicados o si hay alguno faltante;
+		map_exit(game->map, NOT_WALLS, "El tamano del mapa es incorrecto");
 	else if (map_parse_char(game) == 0)
-		map_exit(game->map, NOT_CHARS, "Hay caracteres duplicados y/o faltantes"); // lo mismo para "view duplicate chars";
-	
-	// verifica si hay caracteres invalidos;
+		map_exit(game->map, NOT_CHARS, "Hay caracteres duplicados y/o faltantes");
 	else if (map_parse_incorrect_chars(game) == 0)
-		map_exit(game->map, BAD_CHARS, "Hay caracteres invalidos"); // lo mismo para "incorret chars in map";
-
-	// verifica si hay backtraking
-	map_backtraking(game); // sera otra funcion para ver si hay backtraking o no;
+		map_exit(game->map, BAD_CHARS, "Hay caracteres invalidos");
+	map_backtraking(game);
 }
 
 void	map_start(char **argv, t_game *game)
@@ -69,8 +67,8 @@ void	map_start(char **argv, t_game *game)
 
 	str = argv[1];
 	len = ft_strlen(str);
-	if (!(str[len - 1] == 'r' && str[len - 2] == 'e'&& str[len - 3] == 'b' \
-			&& str[len - 4] == '.'))
+	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b' 
+				&& str[len - 4] == '.'))
 	{
 		ft_printf("Error al ejecutar el programa");
 		exit(1);

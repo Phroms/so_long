@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 22:10:13 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:27:37 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	end_game(t_game *game)
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy(game->mlx);
 	free(game);
-	exit (1);
+	exit (0);
 }
 
 void	free_map(char **map)
 {
 	int i;
 
-	i = 0;
-	while (map[i++])
+	i = -1;
+	while (map[++i])
 		free(map[i]);
 	free(map);
 	map = NULL;
