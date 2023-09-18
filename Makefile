@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 20:11:34 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/15 22:27:23 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/18 18:02:42 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,38 +20,40 @@ HEADERS = include/so_long.h include/errors.h include/move.h include/structs.h
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 MLX = include/mlx/libmlx.a
 
-OLD_MAKE = /usr/bin/make3.81 #make
-
 SRC = src/game_input.c src/image_loader.c src/var_init.c src/draw_map.c \
       src/errors.c src/map.c src/map_backtracking.c src/map_parse_chars.c \
       src/map_parse_rect.c src/player_movement_check.c src/player_movements.c \
-      src/so_long.c
+	  src/so_long.c
+
+OLD_MAKE = /usr/bin/make3.81 #make
+
 all:
 		@$(MAKE) -sC include/libft
-		@$(MAKE) -sC include/mlx
+		@$(OLD_MAKE) -sC include/mlx
 		@$(MAKE) $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-		@printf "\ncompiling objects\n"
+		@printf "Compiling objects\n"
 		@mkdir -p $(@D)
 		@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft -Iinclude/mlx
 
 $(NAME): $(OBJECTS) $(HEADERS) Makefile $(LIBFT) $(MLX)
 		@mkdir -p $(@D)
-		@gcc $(CFLAGS) -o $(NAME) $(OBJECTS) -Iinclude/libft -Linclude/libft -lft \
-		-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -framework Appkit
+		@gcc $(CFLAGS) -o ${NAME} ${OBJECTS} -Iinclude/libft/include -Linclude/libft -lft \
+		-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -framework AppKit
 		@printf "\nCompiled successfully!\n"
 
 fclean: clean
 		@rm -rf $(NAME)
 		@$(MAKE) -C include/libft fclean
 		@$(MAKE) -C include/mlx clean
-		@printf "\nremoved so_long objects\n"
+		@printf "removed so_long objects\n"
 
 clean:
 		@rm -rf $(OBJDIR)
 		@$(MAKE) -C include/libft clean
-		@printf "\nremoved so_long and libft object!\n"
+		@$(MAKE) -C include/mlx clean
+		@printf "removed so_long and libft object!\n"
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 19:07:28 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/15 22:17:35 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/18 18:00:15 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,3 +62,16 @@ $(NAME): $(OBJECTS) $(LIB)
 		@echo "\nLinking ... $@\n"
 		$(AR) ${NAME} ${OBJECTS}
 		@echo "\nHecho!\n"
+clean:
+		@rm -rf $(OBJECTS) $(OBJECTS) $(DEPS) $(DEPS)
+		@printf "removed objects (.o) & deps (.d)!\n"
+
+fclean: clean
+		@rm -rf $(NAME)
+		@printf "Removed libft.a!\n"
+
+re: fclean all
+
+-include $(DEPS) $(DEPS)
+
+.PHONY:	all clean fclean re
