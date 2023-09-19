@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 22:28:12 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:12:28 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ void	read_map(int fd, t_game *game)
 	}
 	printf("hola\n");
 	if (ft_strcmp(all_line, "") == 0)
+	{
+		printf("aqui estoy\n");
 		exit_no_compilation();
+	}
+	printf("no me vees?\n");
 	game->map = ft_split(all_line, '\n');
 	game->map_len = ft_split(all_line, '\n');
 	free(all_line);

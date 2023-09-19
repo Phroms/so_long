@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:05:28 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 19:22:33 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:19:57 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int map_parse_walls_rows(t_game *game)
 		i++;
 	}
 	i = 0;
-	while (game->map[game->rows - 1][i])
+	while (game->map[game->row - 1][i])
 	{
-		if (game->map[game->rows - 1][i] != '1')
+		if (game->map[game->row - 1][i] != '1')
 			return (1);
 		i++;
 	}
@@ -59,14 +59,14 @@ int map_parse_walls_colum(t_game *game)
 	cont_row_col(game);
 	while (game->map[i])
 	{
-		if (game->map[i][0] != '1' && game->map[i][game->colum - 1] != '1')
+		if (game->map[i][0] != '1' && game->map[i][game->col - 1] != '1')
 			return (1);
 		i++;
 	}
 	i = 0;
 	while (game->map[i])
 	{
-		if (game->map[i][game->colum - 1] != '1')
+		if (game->map[i][game->col - 1] != '1')
 			return (1);
 		i++;
 	}

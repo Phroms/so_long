@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 22:20:20 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:44:10 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	game_start(t_game *game)
 {
 	game->mlx = mlx_init();
 	cont_row_col(game);
-	game->win = mlx_new_window(game->mlx, game->ho_row * 32, game->al_col * 32, TITTLE);
+	game->win = mlx_new_window(game->mlx, game->w_w * 32, game->h_w * 32, TITTLE);
 	image_init(game);
 	draw_map(game);
 	mlx_hook(game->win, 2, 0, game_read_keys, game);

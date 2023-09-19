@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:48:30 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 19:18:41 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:16:51 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	cont_row_col(t_game *game)
 	i = 0;
 	while (game->map[i])
 		i++;
-	game->rows = i;
-	game->colum = ft_strlen(game->map[0]);
+	game->row = i;
+	game->col = ft_strlen(game->map[0]);
 }
 
 void	initialize_backtraking(t_game *game)
@@ -32,13 +32,12 @@ void	initialize_backtraking(t_game *game)
 
 	while (game->map_len[i])
 	{
-		j = 0;
 		while (game->map_len[i][j])
 		{
 			if (game->map_len[i][j] == 'P')
 			{
-				game->m_col = i;
-				game->m_row = j;
+				game->p_row = i;
+				game->p_col = j;
 			}
 			if (game->map_len[i][j] == 'C')
 				game->c++;
@@ -71,7 +70,7 @@ void	map_backtraking(t_game *game)
 {
 	cont_row_col(game);
 	initialize_backtraking(game);
-	localized_backtracking(game, game->m_col,game->m_row);
+	localized_backtracking(game, game->p_row,game->p_col);
 	if (game->c != 0)
 		map_exit(game->map_len, NOT_PATH, "Error\nNo hay un camino valido, no se encontraron monedas");
 	if (game->e != 0)

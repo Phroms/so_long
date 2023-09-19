@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 22:09:30 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:52:45 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ typedef struct s_game
 	t_image	*img;
 	char	**map;
 	char	**map_len;
-	int		al; // sera la altura que definamos;
-	int		an; // sera lo ancho que definamos;
-	int		e; // exit para el backtracking
-	int		c; // segundo coin para hacer el backtracking
+	int		h;
+	int		w;
+	int		e;
+	int		c;
 	int		coins;
 	int		moves;
-	int		al_col; // es el valor X de la altura que tendra;
-	int		ho_row; // es el valor X horizontal que tendra;
-	int		m_col; // movimientos del jugador en columnas;
-	int		m_row; // movimientos del jugador en filas;
-	int		colum; // sera la cantidad de columnas que habra en el mapa; (necesitaras un strlen)
-	int		rows; //sera la cantidad de filas que habra en el mapa; (necesitaras un strlen)
+	int		h_w;
+	int		w_w;
+	int		p_col;
+	int		p_row;
+	int		col;
+	int		row;
 } t_game;
 
 #endif
