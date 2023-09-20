@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:01:06 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:22:05 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	end_game(t_game *game)
 
 void	free_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (map[++i])
@@ -35,8 +35,8 @@ void	free_map(char **map)
 
 void	free_enun(char **map, char *error_msg)
 {
-	free_map(map); // crear una funcion que libere el mapa ;
-	ft_printf(error_msg); // aqui es el ft_printf para imprimir el error msg;
+	free_map(map);
+	ft_printf(error_msg);
 	exit (EXIT_FAILURE);
 }
 

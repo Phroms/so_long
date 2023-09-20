@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:24:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 21:40:58 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:44:43 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-	return (NULL);}
+	return (NULL);
+}
 /*
 int main()
 {

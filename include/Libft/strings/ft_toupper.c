@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:55:21 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 21:44:03 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:45:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_toupper(int c)
 		return (c - 32);
 	else
 		return (c);
-}/*int main()
+}
+/*int main()
 {
 	int c = 'k';
 	printf("%d", ft_toupper(c));

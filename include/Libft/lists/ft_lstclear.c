@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 21:47:26 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:43:50 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	nodo = lst;
 	while (*nodo)
 	{
-		middlemans = (*lst) -> next;
+		middlemans = (*lst)->next;
 		ft_lstdelone(*lst, del);
 		*lst = middlemans;
 	}

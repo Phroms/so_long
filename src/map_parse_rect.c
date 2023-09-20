@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:05:28 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:04:59 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:28:45 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	map_parse_rect(t_game *game)
 {
 	size_t	len;
-	int 	i;
+	int		i;
 
 	i = 0;
 	len = ft_strlen(game->map[i]);
@@ -29,9 +29,9 @@ int	map_parse_rect(t_game *game)
 	return (1);
 }
 
-int map_parse_walls_rows(t_game *game)
+int	map_parse_walls_rows(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	cont_row_col(game);
@@ -51,9 +51,9 @@ int map_parse_walls_rows(t_game *game)
 	return (0);
 }
 
-int map_parse_walls_colum(t_game *game)
+int	map_parse_walls_colum(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	cont_row_col(game);
@@ -75,10 +75,9 @@ int map_parse_walls_colum(t_game *game)
 
 int	map_parse_walls(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	i += map_parse_walls_rows(game);
 	i += map_parse_walls_colum(game);
 	return (i);

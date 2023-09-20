@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:45:24 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 21:07:48 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:44:14 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (num * sign);
-}	
+}
 /*int main()
 {
 	char o[] = "hola123a231bc";

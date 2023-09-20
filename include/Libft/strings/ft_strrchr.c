@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:14:42 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/18 21:41:29 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:45:09 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if ((char)c == s[i])
 		return ((char *)&s[i]);
-	return (ptrs);	
+	return (ptrs);
 }
 /*int main()
 {

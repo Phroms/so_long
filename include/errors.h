@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 18:07:01 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/15 21:31:09 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:36:20 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ERRORS_H
+#ifndef ERRORS_H
 # define ERRORS_H
 
 enum
@@ -24,4 +24,4 @@ enum
 	FINISH,
 };
 
-# endif
+#endif

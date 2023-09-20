@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:00:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:26:55 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:30:40 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	valid_movements(t_game *game, int row, int col)
 
 void	taking_coins(t_game *game, int row, int col)
 {
-	if(game->map[row][col] == 'C')
+	if (game->map[row][col] == 'C')
 	{
 		game->coins--;
 		game->map[row][col] = '0';
@@ -40,10 +40,10 @@ int	handle_exit_key(int key_pressed, t_game *game)
 void	game_finish(t_game *game, int row, int col)
 {
 	if (game->map[row][col] == 'E' && game->coins == 0)
-	{	
+	{
 		mlx_hook(game->win, 2, 0, handle_exit_key, game);
 		draw_finish(game);
 		mlx_string_put(game->mlx, game->win, (game->w_w * 32) / 2 - 20, \
 				(game->h_w * 32) / 2, 0x00FFFFFF, "YOU WIN!!!");
 	}
-}	
+}

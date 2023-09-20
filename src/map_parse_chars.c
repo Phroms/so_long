@@ -6,16 +6,16 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:47:36 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:27:59 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	map_parse_chars(t_game *game, char p) // p es la palabre que se va a encontrar
+int	map_parse_chars(t_game *game, char p)
 {
-	int i;
-	int flags;
+	int	i;
+	int	flags;
 
 	i = 0;
 	flags = 0;
@@ -40,8 +40,8 @@ int	map_parse_chars(t_game *game, char p) // p es la palabre que se va a encontr
 
 int	map_parse_incorrect_chars(t_game *game)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	char	*valid_chars;
 
 	i = 0;
@@ -60,9 +60,9 @@ int	map_parse_incorrect_chars(t_game *game)
 	return (1);
 }
 
-int map_parse_char(t_game *game)
+int	map_parse_char(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	i = map_parse_chars(game, 'C');

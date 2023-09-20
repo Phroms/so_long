@@ -6,11 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 16:51:05 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:23:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:36:42 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef MOVE_H
+#ifndef MOVE_H
 # define MOVE_H
 
 # define TITTLE "so_long"
@@ -24,4 +24,4 @@
 # define D 2
 # define W 13
 
-# endif
+#endif

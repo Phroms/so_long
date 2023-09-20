@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:33:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:37:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		main(int argc, char **argv);
 
 	/* game input */
 
-int 	game_read_keys(int key_pressed, t_game *game); //int new_row, int new_col);
+int		game_read_keys(int key_pressed, t_game *game);
 
 	/* player movements	*/
 
@@ -48,7 +48,7 @@ void	move_player_to_coordinates(t_game *game, int new_row, int new_col);
 
 	/* player movement check */
 
-int 	valid_movements(t_game *game, int row, int col);
+int		valid_movements(t_game *game, int row, int col);
 void	taking_coins(t_game *game, int row, int col);
 int		handle_exit_key(int key_pressed, t_game *game);
 void	game_finish(t_game *game, int row, int col);
@@ -69,13 +69,13 @@ void	map_backtraking(t_game *game);
 
 	/* map_parse_chars */
 
-int 	map_parse_chars(t_game *game, char p);
+int		map_parse_chars(t_game *game, char p);
 int		map_parse_incorrect_chars(t_game *game);
 int		map_parse_char(t_game *game);
 
 	/* map parse rect */
 
-int 	map_parse_rect(t_game *game);
+int		map_parse_rect(t_game *game);
 int		map_parse_walls_rows(t_game *game);
 int		map_parse_walls_colum(t_game *game);
 int		map_parse_walls(t_game *game);

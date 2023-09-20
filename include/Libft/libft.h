@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:00:02 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 18:37:42 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:40:36 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10000
+#  define BUFFER_SIZE 10000
 # endif
 
 # include <unistd.h>
@@ -84,7 +84,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int		ft_lstsize(t_list *lst);
 
-
 /* gnl prueba */
 
 size_t	ft_strlen_gnl(char *s);
@@ -92,29 +91,6 @@ char	*ft_strchr_gnl(const char *str, int c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*free_storage(char *storage);
 char	*get_next_line(int fd);
-
-
-/*
-	Get next line 
-
- PROTOTIPO DEL GET_NEXT_LINE 
-
-char	*get_next_line(int fd);
-
- FUNCIONES ADICIONALES 
-
-size_t	ft_strlen_gnl(char *s);
-size_t	ft_strlcpy_gnl(char *dest, char *src, size_t destsize);
-char	*ft_strchr_gnl(char *s, int c);
-char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
-char	*ft_strjoin_gnl(char *s1, char *s2);
-
- FUNCIONES QUE UTILIZARE 
-
-char	*read_storage(int fd, char *storage);
-char	*extract_storage(char *storage);
-char	*clean_storage(char *storage);
-char	*free_storage(char *storage); */
 
 	/* My printf */
 
