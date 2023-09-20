@@ -6,12 +6,12 @@
 #    By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 20:11:34 by agrimald          #+#    #+#              #
-#    Updated: 2023/09/19 19:52:15 by agrimald         ###   ########.fr        #
+#    Updated: 2023/09/20 18:07:26 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g#-fsanitize=address
 
 LIBFT = include/libft/libft.a
 SRCDIR = src

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 18:04:38 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:01:06 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	map_exit(char **map, int enun_msg, char	*error_msg)
 		exit(EXIT_FAILURE);
 	}
 	if (enun_msg == NOT_RECT)
-		free_enun(map, error_msg); // hacer una funcion que se llamara "free_enun" al que le enviare y el errror de mensaje ;
+		free_enun(map, error_msg);
 	if (enun_msg == NOT_WALLS)
 		free_enun(map, error_msg);
 	if (enun_msg == NOT_CHARS)

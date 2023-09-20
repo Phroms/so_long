@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 18:28:20 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:23:26 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	image_init(t_game *game);
 
 	/* so long */
 
+void	game_dimension(t_game *game);
 void	game_start(t_game *game);
 int		main(int argc, char **argv);
 

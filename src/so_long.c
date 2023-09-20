@@ -6,16 +6,28 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 18:44:10 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:07:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+void	game_dimension(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	while (game->map[i])
+		i++;
+	game->h_w = i;
+	game->w_w = ft_strlen(game->map[0]);
+}
+
 void	game_start(t_game *game)
 {
 	game->mlx = mlx_init();
-	cont_row_col(game);
+	game_dimension(game);
+	ft_printf("w_w: %d\nh_w:%d\n",game->w_w, game->h_w);
 	game->win = mlx_new_window(game->mlx, game->w_w * 32, game->h_w * 32, TITTLE);
 	image_init(game);
 	draw_map(game);

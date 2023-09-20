@@ -6,12 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 19:12:28 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:03:03 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-#include <stdio.h>
 
 void	read_map(int fd, t_game *game)
 {
@@ -21,30 +20,21 @@ void	read_map(int fd, t_game *game)
 
 	line = ft_strdup("");
 	all_line = ft_strdup("");
-	printf("jamon\n");
 	while (line)
 	{
 		free(line);
-		printf("antes\n");
 		line = get_next_line(fd);
-		printf("despues\n");
 		if (line && line[0] == '\n')
 		{
 			free(line);
 			exit_no_compilation();
 		}
-		printf("queso\n");
 		tmp_line = all_line;
 		all_line = ft_strjoin(tmp_line, line);
 		free(tmp_line);
 	}
-	printf("hola\n");
 	if (ft_strcmp(all_line, "") == 0)
-	{
-		printf("aqui estoy\n");
 		exit_no_compilation();
-	}
-	printf("no me vees?\n");
 	game->map = ft_split(all_line, '\n');
 	game->map_len = ft_split(all_line, '\n');
 	free(all_line);
@@ -53,13 +43,13 @@ void	read_map(int fd, t_game *game)
 void	analyze_map(t_game *game)
 {
 	if (map_parse_rect(game) == 0)
-		map_exit(game->map, NOT_RECT, "EL mapa no es rectangulo");
+		map_exit(game->map, NOT_RECT, "Error\nEL mapa no es rectangulo\n");
 	else if(map_parse_walls(game) > 0)
-		map_exit(game->map, NOT_WALLS, "El tamano del mapa es incorrecto");
+		map_exit(game->map, NOT_WALLS, "Error\nEl tamano del mapa es incorrecto\n");
 	else if (map_parse_char(game) == 0)
-		map_exit(game->map, NOT_CHARS, "Hay caracteres duplicados y/o faltantes");
+		map_exit(game->map, NOT_CHARS, "Error\nHay caracteres duplicados y/o faltantes\n");
 	else if (map_parse_incorrect_chars(game) == 0)
-		map_exit(game->map, BAD_CHARS, "Hay caracteres invalidos");
+		map_exit(game->map, BAD_CHARS, "Error\nHay caracteres invalidos\n");
 	map_backtraking(game);
 }
 
@@ -74,7 +64,7 @@ void	map_start(char **argv, t_game *game)
 	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b' 
 				&& str[len - 4] == '.'))
 	{
-		ft_printf("Error al ejecutar el programa");
+		ft_printf("Error\nError al ejecutar el programa\n");
 		exit(1);
 	}
 	fd = open(argv[1], O_RDONLY);

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:00:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/19 18:28:21 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:05:48 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	valid_movements(t_game *game, int row, int col)
 {
 	if (game->map[row][col] == '1')
+	{
 		return (0);
+	}
 	return (1);
 }
 
