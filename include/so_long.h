@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:23:26 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:33:24 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		main(int argc, char **argv);
 
 	/* game input */
 
-int 	game_read_keys(int key_pressed, t_game *game, int new_row, int new_col);
+int 	game_read_keys(int key_pressed, t_game *game); //int new_row, int new_col);
 
 	/* player movements	*/
 
