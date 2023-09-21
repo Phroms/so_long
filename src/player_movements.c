@@ -6,13 +6,13 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:47:25 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 21:31:44 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/21 21:30:12 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	player_movements(t_game *game, int row_offset, int col_offset)
+/*void	player_movements(t_game *game, int row_offset, int col_offset)
 {
 	if (valid_movements(game, game->p_row + row_offset, game->p_col + col_offset))
 	{
@@ -32,11 +32,12 @@ void	player_movements(t_game *game, int row_offset, int col_offset)
 		game->p_row += row_offset;
 		game->p_col += col_offset;
 		mlx_put_image_to_window(game->mlx, game->win, game->img[4].img_ptr, (game->p_col) * 32, (game->p_row) * 32);
+
 		game_finish(game, game->p_row, game->p_col);
 		ft_printf("Player moves %d\n", game->moves);
 		game->moves += 1;
 	}
-}
+}*/
 
 void	move_player_to_coordinates(t_game *game, int new_row, int new_col)
 {
