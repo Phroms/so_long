@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/21 21:30:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:30:24 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_game
 	int		p_row;
 	int		col;
 	int		row;
-	//int		has_coin;
+	//char	current_tile;
 	//int		crossed_door;
 }t_game;
 #endif
