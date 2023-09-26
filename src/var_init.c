@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 20:55:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/20 18:06:23 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/26 20:54:46 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	var_init(t_game *game)
 	game->moves = 1;
 	game->h_w = 0;
 	game->w_w = 0;
-	game->p_col = 0;
-	game->p_row = 0;
+	game->x = 0;
+	game->y = 0;
 	game->col = 0;
 	game->row = 0;
 }
