@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:27:36 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:58:41 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/26 21:03:27 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_game
 	int		w_w;
 	int		x;
 	int		y;
-	int		col;
 	int		row;
+	int		col;
 }t_game;
 #endif

@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:18:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:54:25 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:45:06 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ int	main(int argc, char **argv)
 		free(game);
 	}
 	else
-		ft_printf("Error\nMapa no apropiado.\n");
+		ft_printf("Error\nNo map provied.\n");
 	return (0);
 }

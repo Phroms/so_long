@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 19:34:39 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:52:10 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:36:39 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_enun(char **map, char *error_msg)
 
 void	exit_no_compilation(void)
 {
-	ft_printf("Error el mapa no compila o esta vacio");
+	ft_printf("Error\nMap contains \\n or empty");
 	exit(EXIT_FAILURE);
 }
 
@@ -50,7 +50,7 @@ void	map_exit(char **map, int enun_msg, char	*error_msg)
 {
 	if (enun_msg == NOT_BER)
 	{
-		ft_printf("\n No hay un archivo ber");
+		ft_printf("Error\n.ber extension not found");
 		exit(EXIT_FAILURE);
 	}
 	if (enun_msg == NOT_RECT)

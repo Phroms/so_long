@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:48:30 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:53:23 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:43:43 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	map_backtraking(t_game *game)
 	localized_backtracking(game, game->x, game->y);
 	if (game->c != 0)
 		map_exit(game->map_len, NOT_PATH, \
-				"Error\nNo hay un camino valido, no se encontraron monedas\n");
+				"Error\nNo valid path not coins blocked.\n");
 	if (game->e != 0)
 		map_exit(game->map_len, NOT_PATH, \
-				"Error\nNo se encontro alguna salida\n");
+				"Error\nMap does not have a valid exit.\n");
 	free_map(game->map_len);
 }

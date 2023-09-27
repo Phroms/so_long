@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 21:28:09 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:52:44 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:54:19 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ void	image_data(t_game *game)
 			&game->img[3].bpp, &game->img[3].size_l, &game->img[3].endian);
 	game->img[4].data = (int *)mlx_get_data_addr(game->img[4].img_ptr,
 			&game->img[4].bpp, &game->img[4].size_l, &game->img[4].endian);
-	game->img[5].data = (int *)mlx_get_data_addr(game->img[5].img_ptr,
-			&game->img[5].bpp, &game->img[5].size_l, &game->img[5].endian);
-	game->img[6].data = (int *)mlx_get_data_addr(game->img[6].img_ptr,
-			&game->img[6].bpp, &game->img[6].size_l, &game->img[6].endian);
 }
 
 void	image_init(t_game *game)
@@ -45,9 +41,5 @@ void	image_init(t_game *game)
 			"assets/door.xpm", &game->w, &game->h);
 	game->img[4].img_ptr = mlx_xpm_file_to_image(game->mlx,
 			"assets/player.xpm", &game->w, &game->h);
-	game->img[5].img_ptr = mlx_xpm_file_to_image(game->mlx,
-			"assets/player_left.xpm", &game->w, &game->h);
-	game->img[6].img_ptr = mlx_xpm_file_to_image(game->mlx,
-			"assets/door_open.xpm", &game->w, &game->h);
 	image_data(game);
 }

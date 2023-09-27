@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:31:12 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:53:32 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:46:06 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,27 @@ int	map_parse_chars(t_game *game, char p)
 	return (1);
 }
 
+int	valid_char(int c)
+{
+	if (c == 'C' || c == 'E' || c == 'P' || c == '1' || c == '0')
+		return (1);
+	else
+		return (0);
+}
+
 int	map_parse_incorrect_chars(t_game *game)
 {
 	int		i;
 	int		j;
-	char	*valid_chars;
 
 	i = 0;
-	valid_chars = "10CEP";
 	while (game->map[i])
 	{
 		j = 0;
 		while (game->map[i][j])
 		{
-			if (ft_strchr(valid_chars, game->map[i][j]) == NULL)
-				return (0);
+			if (!valid_char(game->map[i][j]))
+				map_exit(game->map, NOT_CHARS, "Error\ninvalid chars\n");
 			j++;
 		}
 		i++;

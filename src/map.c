@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 17:08:59 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:53:05 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:41:39 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ void	read_map(int fd, t_game *game)
 void	analyze_map(t_game *game)
 {
 	if (map_parse_rect(game) == 0)
-		map_exit(game->map, NOT_RECT, "Error\nEL mapa no es rectangulo\n");
+		map_exit(game->map, NOT_RECT, "Error\nMap not rect\n");
 	else if (map_parse_walls(game) > 0)
 		map_exit(game->map, NOT_WALLS, \
-				"Error\nEl tamano del mapa es incorrecto\n");
+				"Error\nMap have incorrect size/Walls\n");
 	else if (map_parse_char(game) == 0)
 		map_exit(game->map, NOT_CHARS, \
-				"Error\nHay caracteres duplicados y/o faltantes\n");
+				"Error\nDuplicate or missings chars\n");
 	else if (map_parse_incorrect_chars(game) == 0)
-		map_exit(game->map, BAD_CHARS, "Error\nHay caracteres invalidos\n");
+		map_exit(game->map, BAD_CHARS, "Error\nInvalid chars\n");
 	map_backtraking(game);
 }
 
@@ -66,15 +66,15 @@ void	map_start(char **argv, t_game *game)
 	if (!(str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
 			&& str[len - 4] == '.'))
 	{
-		ft_printf("Error\nError al ejecutar el programa\n");
+		ft_printf("Error\nIncorrect file extension\n");
 		exit(1);
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (!fd)
 		exit (1);
-	ft_printf("ACTUALIZACION: ARCHIVO ABIERTO CON EXITO EN EL FD %d\n", fd);
+	ft_printf("INFO: FILE SUCCESFULLY OPEN IN FD %d\n", fd);
 	read_map(fd, game);
 	analyze_map(game);
-	ft_printf("ACTUALIZACION:MAPA ANALIZADO CORRECTAMENTE\n");
+	ft_printf("INFO: Map parsed correctly\n");
 	close(fd);
 }

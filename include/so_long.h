@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:12:57 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/26 20:44:59 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:28:05 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	map_backtraking(t_game *game);
 	/* map_parse_chars */
 
 int		map_parse_chars(t_game *game, char p);
+int		valid_chars(int c);
 int		map_parse_incorrect_chars(t_game *game);
 int		map_parse_char(t_game *game);
 
